@@ -1,0 +1,21 @@
+proxy:
+  title: Open Analytics Shiny Proxy
+  logo-url: https://www.openanalytics.eu/shinyproxy/logo.png
+  landing-page: /
+  heartbeat-rate: 10000
+  heartbeat-timeout: 60000
+  port: 8080
+  authentication: simple
+  # Example: 'simple' authentication configuration
+  users:
+    - name: jack
+      password: password
+  specs:
+    - id: gradio-demo
+      display-name: Gradio Demo Application
+      port: 8000
+      container-image: gradio-demo
+      target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
+logging:
+  file:
+    name: shinyproxy.log
