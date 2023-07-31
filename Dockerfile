@@ -2,8 +2,6 @@ FROM python:3.10
 
 LABEL maintainer "Tobias Verbeke <tobias.verbeke@openanalytics.eu>"
 
-COPY requirements.txt .
-
 RUN pip install gradio fastapi uvicorn
 
 WORKDIR /app
