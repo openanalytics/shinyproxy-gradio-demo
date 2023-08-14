@@ -21,7 +21,8 @@ sudo docker build -t openanalytics/shinyproxy-gradio-demo .
 # ShinyProxy Configuration
 
 To add the gradio application to ShinyProxy add the following lines to its configuration file (see [application.yml](./application.yml) for the complete file):
-```
+
+```yaml
 specs:
   - id: gradio-demo
     display-name: Gradio Demo Application
