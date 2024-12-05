@@ -28,8 +28,10 @@ proxy:
     - id: gradio-demo
       display-name: Gradio Demo Application
       port: 8000
-      container-image: gradio-demo
+      container-image: openanalytics/shinyproxy-gradio-demo
       target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
+      container-env:
+        GRADIO_ROOT_PATH: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH').replaceFirst('/$','')}"
 ```
 
 ## References
